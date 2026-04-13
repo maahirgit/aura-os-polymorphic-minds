@@ -1,14 +1,14 @@
-#ifndef ALERT_SYSTEM_H
-#define ALERT_SYSTEM_H
+#ifndef ACTIVE_STATE_H
+#define ACTIVE_STATE_H
 
-#include "Observer.h"
+#include "State.h"
 #include <iostream>
 using namespace std;
 
-class AlertSystem : public Observer {
+class ActiveState : public State {
 public:
-    void update(string message) override {
-        cout << "🔔 ALERT: " << message << endl;
+    void handle() override {
+        cout << "Kiosk is Active\n";
     }
 };
 
