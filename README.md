@@ -1,124 +1,105 @@
-Aura Retail OS
+# Aura Retail OS – Polymorphic Minds
 
-Polymorphic Minds
+##  Description
+Aura Retail OS is a modular retail kiosk system designed using Object-Oriented Programming principles and design patterns. The system simulates a real-world automated kiosk with role-based access, dynamic inventory management, and intelligent decision-making for pricing and system behavior.
 
-Description
+---
 
-Aura Retail OS is a modular retail kiosk system based on object-oriented design.  
+## 🚀 Features
 
-This is a partial implementation of the system proposed in Subtask 1.
+-👤 Role-based system (Admin & User)
+-🛒 Product purchase with quantity selection
+-📦 Dynamic inventory management
+-⚠ Low stock alerts
+-🧾 Bill / receipt generation
+-📜 Transaction history tracking
+-🏥 Multiple system types (Hospital, Metro, University)
+-🤖 Automatic decision-making for pricing and system state
 
-\---
+---
 
-Implemented Features
+## 🧠 Design Patterns Used
+-**Strategy Pattern**
+Used for pricing logic (Standard and Discount pricing)
 
-Kiosk Core system
+-**State Pattern**
+Represents system modes (Active and Emergency)
 
-Basic Inventory and Payment modules (partial)
+-**Observer Pattern**
+Handles event notifications (e.g., payment alerts)
 
-Strategy Pattern (Pricing)
+-**Factory Pattern**
+Creates system types dynamically (Hospital, Metro, University)
 
-State Pattern (Kiosk Modes)
+---
 
-\---
+## ⚙️ System Logic
+-**State Decision**
+-Stock = 0 → Emergency Mode
+-Stock > 0 → Active Mode
 
-Design Patterns
+-**Pricing Decision**
+-Stock > 5 → Discount Pricing
+-Stock ≤ 5 → Standard Pricing
 
-Strategy Pattern  
+---
 
-Used for dynamic pricing (Standard, Discount).
+## 🖥 Sample Output Select Role:
+Admin User Enter: 2
 
-State Pattern  
+Select System Type:
+Hospital
+Metro University Enter: 1
 
-Used for kiosk modes (Active, Emergency).
+========= MENU =========
 
-\---
+USER MODE
 
-Simulation
+View Items Buy Item View History Exit
 
-Demonstrates:
+Available Items:
 
-State handling
+medicine (5 left) | Price: 200
+mask (10 left) | Price: 50
+sanitizer (7 left) | Price: 100
+Enter item name: medicine Enter quantity: 2
 
-Pricing calculation
+Processing order... Payment Successful
+BILL
+Item: medicine Quantity: 2
+Total: 400
 
-Output:
-
-Kiosk is Active
-
-Discount Applied
-
-Final Price: 80
-
-
-
-project structure
-
-Aura-Retail-OS/
-
-│
-
+---
+## 🏗 Project Structure Aura-Retail-OS/
 ├── src/
-
 │ ├── core/
-
 │ ├── inventory/
-
 │ ├── payment/
-
 │ └── patterns/
-
 │ ├── strategy/
 
-│ └── state/
-
-│
-
+│ ├── state/
+│ ├── observer/
+│ └── factory/
 ├── simulation/
-
 ├── diagrams/
-
 ├── docs/
-
 └── README.md
 
-How to Run
+---
 
+## ▶ How to Run
+
+```bash
 g++ simulation/main.cpp src/core/KioskCore.cpp src/inventory/InventorySystem.cpp src/payment/PaymentSystem.cpp -o app
+.\app.exe
 
-./app
-
-
-
-\---
-
-Future Enhancements
-
-The current system is a partial implementation. The following improvements can be made:
-
-Integration of Inventory System with real-time stock updates
-
-Advanced Payment System with multiple payment methods and failure handling
-
-Additional kiosk states such as Maintenance and Idle modes
-
-Implementation of more pricing strategies such as dynamic and emergency pricing
-
-Event-driven communication using Observer Pattern
-
-Failure handling mechanisms using advanced design patterns
-
-Improved scalability and support for multiple kiosks
-
-\---
-
-Team – Polymorphic Minds
-
+🔮 Future Enhancements
+Database integration for persistent storage Advanced dynamic pricing strategies Additional system states (Maintenance, Idle) GUI-based interface
+Recommendation system based on demand Integration with real-time data sources
+sources
+👥 Team – Polymorphic Minds
 Krisha Doshi
-
 Maahir Shah
-
 Rishika Shah
-
 Meet Sheth
-
