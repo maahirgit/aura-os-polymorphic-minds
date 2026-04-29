@@ -1,6 +1,6 @@
 class KioskMemento {
     constructor(state) {
-        this.data = JSON.parse(JSON.stringify(state)); // Deep copy
+        this.data = state; 
         this.timestamp = new Date();
     }
 }
